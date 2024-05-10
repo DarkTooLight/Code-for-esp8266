@@ -3,6 +3,7 @@
 
   Connections:
   good google
+  good google
     MicroSD Card
     Card Module       ESP8266
     --------------------------------

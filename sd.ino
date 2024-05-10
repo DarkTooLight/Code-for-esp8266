@@ -2,6 +2,7 @@
   SD-Card write and read test with ESP8266
 
   Connections:
+  good
     MicroSD Card
     Card Module       ESP8266
     --------------------------------

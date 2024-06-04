@@ -1,24 +1,18 @@
-int irPin=2;
-int count=0;
-boolean state = true;
-
-void setup() {
-Serial.begin(9600);
-pinMode(irPin, INPUT);
-}
-
-void loop() {
-  
-  if (!digitalRead(irPin) && state){
-      count++;
-      state = false;
-      Serial.print("Count: ");
-      Serial.println(count);
-      delay(100);
-  }
-  if (digitalRead(irPin)){
-     state = true;
-      delay(100);
-  }
-
-}
+#include <IRremote.h>
+ int IR_Recv = D0;
+ //IR Receiver Pin 2 
+IRrecv irrecv(IR_Recv);
+ decode_results results;
+ void setup(){ 
+    pinMode(D1, OUTPUT);
+     Serial.begin(9600); 
+ //starts serial communication
+   irrecv.enableIRIn();
+  // Starts the receiver 
+    } 
+void loop(){ if (irrecv.decode(&results)) { 
+        long int decCode = results.value;
+         Serial.println(decCode);
+         irrecv.resume();
+         } 
+    }

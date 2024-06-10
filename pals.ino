@@ -2,7 +2,7 @@ int pals = D5;
 
 void setup(){
     
-  pinMode(pals, OUTPUT);
+  pinMode(pals, OUTPUTf);
 }
 
 void loop() {
